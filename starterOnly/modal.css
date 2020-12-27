@@ -527,3 +527,9 @@ footer {
   }
 }
 
+#error-first, #error-last{
+  width: 110%;
+  transition: 0.5S;
+  font-size: 10px;
+  
+}
