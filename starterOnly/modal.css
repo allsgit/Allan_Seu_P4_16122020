@@ -527,7 +527,7 @@ footer {
   }
 }
 
-#error-first, #error-last{
+#error-first, #error-last, #error-mail{
   width: 110%;
   transition: 0.5S;
   font-size: 10px;

@@ -26,11 +26,13 @@ const Birth = document.getElementById("birthdate");
 let formBox = document.getElementById("form-user")
 const firstName = document.getElementById("first");
 const lastName = document.getElementById("last");
-let mailAdress = document.getElementById("email");
+let mailAdress = document.getElementById("email")
 let quantityOfTournament = document.getElementById("quantity");
-let inputs = document.getElementsByClassName("input")
-let errorMsgForFirst = document.getElementById("error-first")
-let errorMsgForLast = document.getElementById("error-last")
+let inputs = document.getElementsByClassName("input");
+let errorMsgForFirst = document.getElementById("error-first");
+let errorMsgForLast = document.getElementById("error-last");
+let errorMsgForMail = document.getElementById("error-mail");
+let mailRegex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 ///////////////////////////////////////////////////////////
 
 
@@ -53,32 +55,31 @@ function validate() {
 
 }
 
-function test(field) {
-  if (!field.value.length){
-    errorMsgForFirst.innerHTML = "";
-    errorMsgForFirst.opacity = "0";
+// deux caractère minimum sur le prénom et nom
+
+firstName.addEventListener("input", function(){
+
+  if (!firstName.value.length){
+    console.log("lelelel")
+    errorMsgForFirst.innerHTML = "Veuillez indiquer votre prénom";
+    errorMsgForFirst.style.opacity = "1";
   }
-  else if (field.value.length <= 2 ){
-    errorMsgForFirst.innerHTML = " Le prénom doit comporter 2 caractères au minimum";
+  else if (firstName.value.length <= 2 ){
+    errorMsgForFirst.innerHTML = " Le Prénom doit comporter 2 caractères au minimum";
     error_msg_style();
   }
   else{
     errorMsgForFirst.innerHTML = "";
     errorMsgForFirst.style.opacity = "0"
   }
-}
-
-// deux caractère minimum sur le prénom et nom
-firstName.addEventListener("input", function(){
-    test(firstName, msgFirstName);
 })
 
 lastName.addEventListener("input", function(){
 
   if (!lastName.value.length){
-    console.log("lelelel")
-    errorMsgForLast.innerHTML = "";
-    errorMsgForLast.style.opacity = "0";
+    console.log("pas de pb")
+    errorMsgForLast.innerHTML = "veuilez indiquer votre nom";
+    errorMsgForLast.style.opacity = "1";
   }
   else if (lastName.value.length <= 2 ){
     errorMsgForLast.innerHTML = " Le nom doit comporter 2 caractères au minimum";
@@ -89,6 +90,35 @@ lastName.addEventListener("input", function(){
     errorMsgForLast.style.opacity = "0"
   }
 })
+
+// check du mail
+mailAdress.addEventListener("input", mailCheckValidate)
+
+function mailCheckValidate(){
+
+  if(!mailAdress.value.length){
+    errorMsgForMail.innerHTML = "veuillez renseingner votre adresse email";
+
+  }
+
+  else if (mailRegex.test(mailAdress.value) == false) {
+    console.log(" sa ne va passss");
+    errorMsgForMail.innerHTML = "merci d'indiquer une adresse mail valide";
+    errorMsgForMail.style.color = "red"
+  }
+  else{
+    console.log("ok");
+    errorMsgForMail.innerHTML = "";
+
+  }
+}
+
+
+
+
+
+
+
 
 
 
