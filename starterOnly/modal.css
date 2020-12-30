@@ -97,7 +97,7 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -15px;
+    margin-top: 0px; /* modification position menu responsive -15px top de base */
   }
 } 
 
@@ -484,6 +484,7 @@ footer {
     box-shadow: unset;
   }
   .hero-content {
+    display: contents; /* ajout du display content */
     background: #fff;
     color: #000;
     padding: 20px;
@@ -527,7 +528,7 @@ footer {
   }
 }
 
-#error-first, #error-last, #error-mail{
+#error-first, #error-last, #error-mail, #error-quantityTournament{
   width: 110%;
   transition: 0.5S;
   font-size: 10px;

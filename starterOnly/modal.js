@@ -32,7 +32,10 @@ let inputs = document.getElementsByClassName("input");
 let errorMsgForFirst = document.getElementById("error-first");
 let errorMsgForLast = document.getElementById("error-last");
 let errorMsgForMail = document.getElementById("error-mail");
+let errorMsgForTournament = document.getElementById("error-quantityTournament");
+
 let mailRegex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+let checkBoxForNews = document.getElementsByClassName("checkbox-input")
 ///////////////////////////////////////////////////////////
 
 
@@ -102,16 +105,40 @@ function mailCheckValidate(){
   }
 
   else if (mailRegex.test(mailAdress.value) == false) {
-    console.log(" sa ne va passss");
     errorMsgForMail.innerHTML = "merci d'indiquer une adresse mail valide";
     errorMsgForMail.style.color = "red"
   }
   else{
-    console.log("ok");
     errorMsgForMail.innerHTML = "";
 
   }
 }
+//
+quantityOfTournament.addEventListener("input", checkValidate)
+
+function checkValidate(){
+  if(!quantityOfTournament.value)
+  {
+    errorMsgForTournament.innerHTML = "veuillez indiquer le nombre de tournoi effectués"
+    errorMsgForTournament.style.color = "red"
+
+  }
+  else if(quantityOfTournament.value >= 0 )
+  {
+    
+    errorMsgForTournament.innerHTML = ""
+  }
+}
+// checkbox
+
+
+
+
+
+
+
+
+
 
 
 
