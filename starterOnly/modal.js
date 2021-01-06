@@ -33,18 +33,36 @@ let errorMsgForFirst = document.getElementById("error-first");
 let errorMsgForLast = document.getElementById("error-last");
 let errorMsgForMail = document.getElementById("error-mail");
 let errorMsgForTournament = document.getElementById("error-quantityTournament");
-
 let mailRegex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-let checkBoxForNews = document.getElementsByClassName("checkbox-input")
+let checkBoxForNews = document.getElementsByClassName("checkbox-input");
+let errorValidation = document.getElementById("missing-value-error");
 ///////////////////////////////////////////////////////////
+// launch modal event
+modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
-
-
-formBox.addEventListener('submit', function(e){
-  e.preventDefault()
+// launch modal form
+function launchModal() {
+    modalbg.style.display = "block";
+}
+//Close modal Form
+closeCross.addEventListener("click", function() {
+    modalbg.style.display = "none";
 })
 
-// vérifier que tout les champs soient remplis
+// prevent default
+formBox.addEventListener('submit', function(e){
+ 
+  if (mailCheckValidate=true) {
+    e.preventDefault()
+  }
+  else{
+
+  }
+  
+})
+
+// vérifier que tout les champs soient remplis, 
+//afficher msg d'erreur en cas de champ vide
 function validate() { 
   if (
     !firstName.value || 
@@ -53,17 +71,22 @@ function validate() {
     !quantityOfTournament.value || 
     !birthDate.value)
     {
-    alert ('Tout les champs doivent être renseignés');
+
+    errorValidation.innerHTML = "Tout les champs doivent être renseignés";
+    errorValidation.style.opacity = 1;
+    errorValidation.style.color = "red";
+    errorValidation.style.animation = "slide 0.5s ease-out forwards";
+
     }
+  else{
+  
+  }
 
 }
-
 // deux caractère minimum sur le prénom et nom
-
 firstName.addEventListener("input", function(){
 
   if (!firstName.value.length){
-    console.log("lelelel")
     errorMsgForFirst.innerHTML = "Veuillez indiquer votre prénom";
     errorMsgForFirst.style.opacity = "1";
   }
@@ -76,7 +99,6 @@ firstName.addEventListener("input", function(){
     errorMsgForFirst.style.opacity = "0"
   }
 })
-
 lastName.addEventListener("input", function(){
 
   if (!lastName.value.length){
@@ -96,7 +118,6 @@ lastName.addEventListener("input", function(){
 
 // check du mail
 mailAdress.addEventListener("input", mailCheckValidate)
-
 function mailCheckValidate(){
 
   if(!mailAdress.value.length){
@@ -113,7 +134,7 @@ function mailCheckValidate(){
 
   }
 }
-//
+// nombre de tournois
 quantityOfTournament.addEventListener("input", checkValidate)
 
 function checkValidate(){
@@ -138,27 +159,4 @@ function checkValidate(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-// launch modal event
-modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
-
-// launch modal form
-function launchModal() {
-  modalbg.style.display = "block";
-}
-//Close modal Form
-closeCross.addEventListener("click", function(){
-modalbg.style.display = "none"
-})
-// event listener saisie utilisateur
 

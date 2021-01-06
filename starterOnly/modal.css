@@ -332,6 +332,7 @@ input[data-error]::after {
   color: #fff;
   cursor: pointer;
   border: 0;
+  margin-bottom: 10px;
 }
 /* custom select styles */
 .custom-select {
@@ -516,6 +517,12 @@ footer {
     margin-top: 50px;
     text-align: center;
   }
+  #missing-value-error{
+    font-size: 12px;
+    text-align: center;
+    padding-left: 0px;
+    
+  }
 }
 
 @keyframes modalopen {
@@ -533,4 +540,22 @@ footer {
   transition: 0.5S;
   font-size: 10px;
   
+}
+
+#missing-value-error{
+  font-size: 12px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+@keyframes slide{
+  0%{
+    padding-left: 0%;
+  }
+  90%{
+    padding-left: 30%;
+  }
+  100%{
+    padding-left: 23%;
+  }
 }
