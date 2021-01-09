@@ -138,6 +138,26 @@ main {
 }
 
 /* Modal form */
+#validation-box{
+  text-align: center;
+  display: none;
+  height: 200px;
+  margin: auto;
+  padding-top: 86px;
+}
+#close-btn{
+display: none;
+background: #fe142f;
+margin-top: 0.5em;
+padding: 1em;
+color: #fff;
+border-radius: 15px;
+cursor: pointer;
+font-size: 16px;
+outline: none;
+margin: 0 auto;
+border: none;
+}
 
 .button {
   background: #fe142f;
@@ -497,8 +517,10 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 4.5rem;
-    white-space: normal;
+      font-size: 2.5rem;
+      text-align: center;
+      white-space: normal;
+      padding-top: 28px;
   }
   .hero-text {
     width: unset;

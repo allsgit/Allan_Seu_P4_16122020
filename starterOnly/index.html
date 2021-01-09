@@ -56,6 +56,9 @@
         <div class="content">
           <span class="close"></span>
           <div class="modal-body">
+
+            <div id="validation-box"></div> <!--validation popup-->
+            <button id="close-btn">Fermer</button>
             <form
               id="form-user"
               name="reserve"
@@ -106,6 +109,7 @@
                   id="birthdate"
                   name="birthdate"
                 /><br>
+                <span id="error-birth"></span>
               </div>
               <div
                 class="formData">
@@ -197,6 +201,8 @@
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
                 <br>
+                <span id="error-condition"></span>
+
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
