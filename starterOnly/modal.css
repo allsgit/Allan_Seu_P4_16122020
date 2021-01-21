@@ -14,7 +14,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-image: url("background.png");
+  /*background-image: url("background.png");*/
   font-family: var(--font-default);
   font-size: 18px;
   max-width: 1300px;
@@ -27,6 +27,7 @@ p {
 }
 
 img {
+  object-fit: cover;
   padding-right: 1rem;
 }
 
@@ -557,12 +558,21 @@ footer {
   }
 }
 
-#error-first, #error-last, #error-mail, #error-quantityTournament{
+#error-first, 
+#error-last, 
+#error-mail, 
+#error-quantityTournament, 
+#error-radio{
   width: 110%;
   transition: 0.5S;
   font-size: 10px;
   color : red;
   
+}
+#error-condition{
+  font-size: 18px;
+  transition: 0.5s;
+  word-spacing: 2px;
 }
 
 #missing-value-error{
