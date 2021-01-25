@@ -562,7 +562,8 @@ footer {
 #error-last, 
 #error-mail, 
 #error-quantityTournament, 
-#error-radio{
+#error-radio,
+#error-birth{
   width: 110%;
   transition: 0.5S;
   font-size: 10px;
