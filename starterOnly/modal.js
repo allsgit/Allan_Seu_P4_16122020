@@ -145,7 +145,7 @@ function birthTest () {
     errorMsgForBirth.style.opacity = '1';
     console.log ('birth = ' + checkBirth);
   } else if (regexBirthObj.test (birth.value) == false) {
-    errorMsgForBirth.innerHTML = "merci d'indiquer une birth valide";
+    errorMsgForBirth.innerHTML = "merci d'indiquer une date de naissance valide";
     errorMsgForBirth.style.color = 'red';
     console.log ('birth = ' + checkBirth);
   } else if (date1 < date3) {
@@ -153,7 +153,7 @@ function birthTest () {
       "votre age doit être compris entre 1900 et aujourd'hui";
     errorMsgForBirth.style.color = 'red';
   } else if (date1 > date2) {
-    errorMsgForBirth.innerHTML = "merci d'indiquer le bon age";
+    errorMsgForBirth.innerHTML = "Vous devez avoir 16 ans au minimum pour vous inscrire";
     errorMsgForBirth.style.color = 'red';
   } else if (date1 < date2 && date1 > date3) {
     errorMsgForBirth.innerHTML = '';
